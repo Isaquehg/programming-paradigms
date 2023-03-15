@@ -18,3 +18,6 @@ Metaliguagem -> Gramática BNF
 - Ordem
 - Estruturas Aninhadas
 - Precedência de Operadores
+
+Obs.: Gramática recursiva gera infinitas possibilidades
+
