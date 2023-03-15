@@ -45,7 +45,7 @@ func main(){
 	//ex 2
 	rand_num := [100]int{}
 
-	for i = 0; i < 100; i ++ {
+	for i := 0; i < 100; i ++ {
 		rand_num[i] = rand.Intn(100)
 	}
 
