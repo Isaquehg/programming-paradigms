@@ -51,3 +51,52 @@
 - Intervalo entre criação e destruição
 - Varia entre global e local
 - static em C é uma variável local com tempo de vida global
+
+## Manipulações de Memória
+- Alocação
+- Desalocação/liberação
+- Realocação
+
+## Tipos de Tempo de Vida (tempo alocação x tempo liberação)
+- Estática
+    - Vinculação de armazenamento ANTES da execução
+    - Vantagens:
+        - Suporte a subprogramas sensíveis a Historico (impede recursividade).
+        - Eficiência (endereçamento aberto, acesso rápido)
+    - Desvantagens:
+    - Alocada no BSS Segment ou Data Segment
+    - Exemplo: static int x;
+
+- Dinâmica da Pilha (Stack dynamic)
+    - Exemplo: Alocada quando o trecho é realmente chamado (dinâmico), mas o tipo já é vinculado antes da execução (estático) -> (híbrido)
+    - Vantagens:
+        - Permite compartilhamento de memória
+        - Permite recursão
+    - Desvantagens:
+        - Sobrecarga de tempo de execução
+        - Acessos mais lentos
+        - Sem histórico de execução
+
+- Dinâmica do Monte Explícitas (explicit heap dynamic)
+    - Exempli: malloc, alloc, new, objetos Java, etc.
+    - Exemplo C++
+
+            int *intnode;
+            intnode = new int;
+            delete intnode;
+        
+    - Vantagens:
+        - Estruturas dinâmicas
+    - Desvantages
+        - Dificuldade de usar ponteiros
+        - Custo de referências
+        - Complexidade de implementação do gerenciamento de memória
+
+- Dinâmica do Monte Implícitas (implicit heap dynamic)
+    - Só são vinculadas quando algum valor é atribuído à variável
+    - Vantagens:
+        - Flexibilidade
+    - Desvantagens:
+        - Ineficiente, pois atributos dependem do momento de execução
+        - Perda de detecção de erros (sem type-checking)
+    - Exemplos: 
