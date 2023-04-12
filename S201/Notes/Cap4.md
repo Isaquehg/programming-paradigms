@@ -100,3 +100,21 @@
         - Ineficiente, pois atributos dependem do momento de execução
         - Perda de detecção de erros (sem type-checking)
     - Exemplos: 
+
+## Escopo
+### Tipos
+- Visível
+- Local: Declarada no bloco
+- Não Local: Pode ser uma global utilizada em um bloco (não declarada no próprio bloco)
+
+### Escopo Estático
+- Maioria das linguagens
+- Escopo definido no próprio código
+- Processo de Busca
+    - Ocorre de dentro p/ fora: Busca por aquela variável no bloco, depois em escopos maiores e assim por diante (Ancestrais estáticos)
+    - Shadowing: Caso tenham duas declarações, uma dentro de outra, a declaração mais exterior nunca será referenciada pelos blocos mais interiores
+- ex. C Acessar var global -> ::var (operador de escopo)
+- Ordem de Declaração (Peculiaridade C#): Seu escopo é do bloco inteiro, mas a utilização é apenas da linha da declração p/ baixo
+- Declaração não aloca memória, apenas na Definição
+    - Declaração: extern int i
+    - Declaração & Definição: int i
