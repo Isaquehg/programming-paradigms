@@ -118,3 +118,40 @@
 - Declaração não aloca memória, apenas na Definição
     - Declaração: extern int i
     - Declaração & Definição: int i
+- Vantagens:
+    Funciona bem, em geral
+- Desvantagens:
+    Conforme o programa cresce, torna-se excessivo
+
+### Escopo Dinâmico
+- A chamada pode referenciar até mesmo declarações irmãs, não apenas ancestrais; sendo definida pela ordem da função que chamou-a. Caso não a encontre, segue a mesma lógica...
+- Ex.: Neste caso, se a ordem de chamada fosse A -> B -> C, a variável X seria 5. Caso fosse B -> A -> C, X resultaria em 20, pois A foi chamada antes de B.
+
+        func A():
+            var X = 20;
+            func B():
+                var x = 5;
+            func C():
+                print(x);
+
+- Vantagens:
+    - 
+- Desvantagens:
+    - 
+
+## Ambientes de Referenciamento
+- É a ideia oposta do Escopo
+- Para Escopo Estático: Variáveis declaradas em seu escopo local + todas variáveis de escopos ancestrais
+- Ex.: X de Sub3, A e B de Sub1
+
+## Constantes Nomeadas
+- Variáveis imutáveis
+- Favorecem a legibilidade e confiabilidade(proteger de erros de digitar errado o mesmo número)
+- Segurança e parametrização
+- Ex.: const(JS, C#), final(C++), readonly(C#), etc.
+- Casos Específicos:
+    - Em Java, final pode ser utilizado em classes e funções também para prover recursos de bloqueio 
+    - C# é possível escolher entre vinculação estática e dinâmica na declaração de constantes
+        - const: estática
+        - readonly: dinâmica
+- Inicialização é alocar memória e salvar um valor nesse espaço, na declaração
