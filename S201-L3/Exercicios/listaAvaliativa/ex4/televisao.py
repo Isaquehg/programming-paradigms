@@ -10,7 +10,7 @@ class Televisao():
 
     def diminuirVolume(self):
         self._volume -= 1
-        print(f"Volume diminuído para {self._volume}")
+        print(f"Volume reduzido para {self._volume}")
 
     def trocarCanal(self, canal: str):
         self.canal = canal

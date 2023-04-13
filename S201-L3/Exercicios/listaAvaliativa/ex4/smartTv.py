@@ -12,10 +12,8 @@ class SmartTV(Televisao):
         return super().diminuirVolume()
     
     def trocarCanal(self, canal: str):
-        return super().trocaCanal(canal)
+        return super().trocarCanal(canal)
 
-    def conectarInternet(self, conectado: bool):
-        if(conectado):
-            self.internet = True
-        else:
-            self.internet = False
+    def conectarInternet(self):
+        if self.internet:
+            print("Conectado à internet com sucesso!")
