@@ -1,6 +1,6 @@
 # Nome, Vinculações e Escopo
 ## Programação Imperativa
-- Baseiado na arquitetura Von Neumann
+- Baseado na arquitetura Von Neumann
 - Paradigma mais antigo e popular
 - Elementos base
     - Execução passo a passo
