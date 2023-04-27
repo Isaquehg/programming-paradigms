@@ -35,4 +35,22 @@
 ### Complexo
 - Valores são duplas de floats
 
+### Decimal
+- Ponto decimal tem posição fixa
+- Maior precisão que float/double e maior gasto de memória
+
+### Boolean
+- Computadores não endereçam mais a nível de bit, apenas bytes
+- Gastam, portanto, 8 bits
+- Verdadeiro é qualquer valor diferente de 0!!!
+- Flags passam a ser booleans para facilitar legibilidade
+
+### Char
+- ASCII
+- ISO 88
+- Unicode
+    - UTF-8 -> 1 a 6 bytes
+    - UTF-16 -> 2 a 4 bytes
+    - UTF-32 -> fixado em 4 bytes
+- Cadeias de caracteres devem ser primitivas?
 
