@@ -52,5 +52,12 @@
     - UTF-8 -> 1 a 6 bytes
     - UTF-16 -> 2 a 4 bytes
     - UTF-32 -> fixado em 4 bytes
-- Cadeias de caracteres devem ser primitivas?
+
+### Cadeias de Caracteres
+- Tipo primitivo ou especial
+    - Tipos primitivos são recomendados, visto sua praticidade
+- Tamanho
+    - Fixo: Maioria das linguagens (Descritor apenas em tempo de compilação)
+    - Dinâmico Limitado: C/C++ (capacity e max_size)
+    - Dinâmico Ilimitado: Limitado pela RAM apenas (Difícil implementação devida complexidade do descritor)
 
