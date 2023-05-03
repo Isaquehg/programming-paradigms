@@ -60,4 +60,3 @@
     - Fixo: Maioria das linguagens (Descritor apenas em tempo de compilação)
     - Dinâmico Limitado: C/C++ (capacity e max_size)
     - Dinâmico Ilimitado: Limitado pela RAM apenas (Difícil implementação devida complexidade do descritor)
-
