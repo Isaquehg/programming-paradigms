@@ -60,3 +60,15 @@
     - Fixo: Maioria das linguagens (Descritor apenas em tempo de compilação)
     - Dinâmico Limitado: C/C++ (capacity e max_size)
     - Dinâmico Ilimitado: Limitado pela RAM apenas (Difícil implementação devida complexidade do descritor)
+
+## Tipos Ordinais Definidos pelo Usuário (Enum)
+### Tipo Ordinal
+- É uma classe de constantes enumeradas
+- Utilizado para valores como dias, flags, etc
+- Já é ordenada naturalmente
+- Questões sobre verificações de tipos
+    - Mesma constante em mais de um enum (Java sim, C não)
+    - Valores de enumeração convertidos p inteiro (Java não, C sim)
+    - Há outros tipos que podem ser convertidos para enum? (C apenas inteiros, como char)
+- Controle sobre a faixa de valores
+- Vantagem de melhora de Legibilidade e Confiabilidade(em Java)
