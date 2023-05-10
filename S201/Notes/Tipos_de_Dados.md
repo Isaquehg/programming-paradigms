@@ -72,3 +72,20 @@
     - Há outros tipos que podem ser convertidos para enum? (C apenas inteiros, como char)
 - Controle sobre a faixa de valores
 - Vantagem de melhora de Legibilidade e Confiabilidade(em Java)
+
+## Matrizes Associativas (Dict, HasMap)
+### Estrutura e Operações
+- Perl
+    - % Cria a disperção
+    - $ Escalar
+    - @ Referência
+    - Estrutura Dinâmica
+    - Chaves como string
+- Python
+    - Chaves como objetos
+    - Métodos nativos mais seguros
+- Ruby
+    - Qualquer tipo de chave
+- Lua
+    - Tabelas que funcionam como matriz, matriz associativa e struct
+- Eficiência de acesso entre O(1) a O(n), enquanto listas ficam em O(n), pois precisa percorrer todos elementos, já dicionário pode ser acessado diretamente com o valor da chave
