@@ -75,17 +75,30 @@
 
 ## Matrizes Associativas (Dict, HasMap)
 ### Estrutura e Operações
-- Perl
-    - % Cria a disperção
-    - $ Escalar
-    - @ Referência
-    - Estrutura Dinâmica
-    - Chaves como string
-- Python
-    - Chaves como objetos
-    - Métodos nativos mais seguros
-- Ruby
-    - Qualquer tipo de chave
-- Lua
-    - Tabelas que funcionam como matriz, matriz associativa e struct
+- Casos
+    1. Perl
+        - % Cria a disperção
+        - $ Escalar
+        - @ Referência
+        - Estrutura Dinâmica
+        - Chaves como string
+    2. Python
+        - Chaves como objetos
+        - Métodos nativos mais seguros
+    3. Ruby
+        - Qualquer tipo de chave
+    4. Lua
+        - Tabelas que funcionam como matriz, matriz associativa e struct
 - Eficiência de acesso entre O(1) a O(n), enquanto listas ficam em O(n), pois precisa percorrer todos elementos, já dicionário pode ser acessado diretamente com o valor da chave
+
+## Registros (Structs)
+### Estruturas
+- Armazenamento de structs são em locais diferentes de classes
+- Structs em linguagens OOP são classes sem métodos, apenas atributos
+- Formas de referenciar
+    1. Full Qualified Name
+    2. Referências Elípticas (COBOL) -> Mais gasto de processamento e podem ocorrer ambiguidades
+- Operações
+    - Atribuição
+    - Comparação entre campos (COBOL) -> Move corresponding
+    - 
