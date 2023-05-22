@@ -101,4 +101,59 @@
 - Operações
     - Atribuição
     - Comparação entre campos (COBOL) -> Move corresponding
-    - 
+
+## Uniões - Variáveis com mais de um tipo, dependendo do momento da execução, unindo-os
+### Questões
+- A verificação de tipos deve ser obrigatória?
+- As uniões devem ser structs?
+- Tendência de sumirem, pois são perigosas quando sem discriminante
+### Aplicação
+- Fortran
+
+        equivalence (a, b) -> são a mesma variável, com nomes diferentes
+
+- C/C++
+
+        union -> funcionam como structs, com "campos" sendo a mesma variável
+- ADA
+
+        Figure_1: Figure;
+        Figure_2: FIgure(Form => Triangle)
+        Deve prover todos campos, incluindo o discriminante, caso não teve seu discriminante declarado, como em Figure_1. 
+### Famílias
+- Discriminadas -> possui tag indicando qual o tipo da variável em dado momento (Algol 68 e ADA)
+    - Quando seu discriminante não é declarado anteriormente, seus campos devem ser verificados dinamicamente.
+    - Aloca-se memória para o maior variante quando não é fornecido discriminante
+- Livres
+
+## Pointers
+### Usos
+1. Endereçamento indireto para linguagens de montagem (Assembly)
+2. Gerenciar armazenamento dinâmico (heap/monte) -> aloc, maloc
+
+### Definição
+    - Não são dados estruturados, como matrizes e registros
+
+### Questões
+- Qual o escopo e tempo de vida de um ponteiro
+- Qual o tempo de vida de uma var. dinâmica de monte? (Garbage collector ou usar uma função delete)
+- Devem ter restrições sobre quais tipos os ponteiros podem apontar
+- São utilizados para gerenciamento de armazenamento dinâmico, endereçamento indireto ou ambos? ()
+- A linguagem deve suportar tipos ponteiro (*), tipos referência ou ambos? (Mais alto nível ou ambos ou só baixo nível)
+
+### Operações
+- Atribuição -> Atribui um valor útil ao ponteiro
+- Desreferenciamento -> Obtêm o endereço do ponteiro
+
+### Problemas
+- Ponteiros soltos
+- Variáveis dinâmicas de monte perdidas (quando o ponteiro que continha o endereço passa a apontar para outro endereço e não desloca o antigo endereço) -> memory leackage
+
+### Aplicação
+- C/C++: 
+    - Ponteiros void não correm problema de verificação de tipos, pois deve ocorrer um casting antes do desreferenciamento
+    - Tipos de referência: 
+        - Por valor/ponteiro: Passa uma cópia da variável, como é feito normalmente
+        - Por referência/ponteiro: em C++ consegue-se passar tanto ponteiro quanto por referência. Em C podia apenas modificar por referência com & na chamada da função e * nos parâmetros. Em C++ pode-se usar & no parâmetro da função e depois fazer operações sem necessitar de utilizar *. Ex.: 
+        
+                func(int& a, int& b)
