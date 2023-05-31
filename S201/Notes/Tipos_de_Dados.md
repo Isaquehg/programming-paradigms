@@ -9,9 +9,9 @@
 7. Pointers & Refs
 8. Verificação de Tipos
 9. Tipagem Forte
-10. Verificação de Tipos
+10. Equivalência de Tipos
 
-## Introdução
+## 1. Introdução
 - Tipos de dados definidos pelo usuário
 - Tipos abstratos de dados
     - Interface do tipo, ex.: POO
@@ -20,7 +20,7 @@
     - Atributos dinâmicos (endereco, tipo, ...)
 - Objeto: Instâncias de abstrações.
 
-## Tipos Dados Primitivos
+## 2. Tipos Dados Primitivos
 - Tipos primitivos são, geralmente, mais próximos do hardware
 ### Float
 - Representações são apenas aproximações para valores reais
@@ -61,7 +61,7 @@
     - Dinâmico Limitado: C/C++ (capacity e max_size)
     - Dinâmico Ilimitado: Limitado pela RAM apenas (Difícil implementação devida complexidade do descritor)
 
-## Tipos Ordinais Definidos pelo Usuário (Enum)
+## 3. Tipos Ordinais Definidos pelo Usuário (Enum)
 ### Tipo Ordinal
 - É uma classe de constantes enumeradas
 - Utilizado para valores como dias, flags, etc
@@ -73,7 +73,7 @@
 - Controle sobre a faixa de valores
 - Vantagem de melhora de Legibilidade e Confiabilidade(em Java)
 
-## Matrizes Associativas (Dict, HasMap)
+## 4. Matrizes Associativas (Dict, HasMap)
 ### Estrutura e Operações
 - Casos
     1. Perl
@@ -91,7 +91,7 @@
         - Tabelas que funcionam como matriz, matriz associativa e struct
 - Eficiência de acesso entre O(1) a O(n), enquanto listas ficam em O(n), pois precisa percorrer todos elementos, já dicionário pode ser acessado diretamente com o valor da chave
 
-## Registros (Structs)
+## 5. Registros (Structs)
 ### Estruturas
 - Armazenamento de structs são em locais diferentes de classes
 - Structs em linguagens OOP são classes sem métodos, apenas atributos
@@ -102,7 +102,7 @@
     - Atribuição
     - Comparação entre campos (COBOL) -> Move corresponding
 
-## Uniões - Variáveis com mais de um tipo, dependendo do momento da execução, unindo-os
+## 6. Uniões - Variáveis com mais de um tipo, dependendo do momento da execução, unindo-os
 ### Questões
 - A verificação de tipos deve ser obrigatória?
 - As uniões devem ser structs?
@@ -126,7 +126,7 @@
     - Aloca-se memória para o maior variante quando não é fornecido discriminante
 - Livres
 
-## Pointers
+## 7. Pointers
 ### Usos
 1. Endereçamento indireto para linguagens de montagem (Assembly)
 2. Gerenciar armazenamento dinâmico (heap/monte) -> aloc, maloc
@@ -157,3 +157,36 @@
         - Por referência/ponteiro: em C++ consegue-se passar tanto ponteiro quanto por referência. Em C podia apenas modificar por referência com & na chamada da função e * nos parâmetros. Em C++ pode-se usar & no parâmetro da função e depois fazer operações sem necessitar de utilizar *. Ex.: 
         
                 func(int& a, int& b)
+
+## 8. Verificação de Tipos
+### Definição
+Garantir que os operandos de um operador são tipos compatíveis
+### Conversões
+- Coerção: Conversão automática -> **Na coerção, sempre a conversão é feita para um tipo superior (maior, tipo de int para float ou float para double) quando vai decidir qual tipo os dados serão convertidos na operação!**
+
+        float x = 1 + 5.0f
+- Casting
+
+        float x = (float)1 + 5.0f
+### Momento de verificação
+- Quando a verificação de tipos é feita em tempo de compilação, ocorre menos gasto computacional e ocorrem menos erros
+- A vantagem de verificar em execução é poder executar sem grande tempo de planejamento
+**Nem todos erros de tipo podem ser detectados em momento de compilação**
+
+### Abordagens que podem resultar em complicações ao verificar tipos
+Unions em C++, Equivalence em Fortran e registros variantes em Ada podem ocasionar problemas, pois uma mesma célula pode assumir mais de um tipo durante execução
+
+## 9. Tipagem Forte
+### Definição
+A facilidade ou não da linguagem converter um tipo automaticamente
+
+### Nonconverting cast (bypass de verificação de tipos)
+Conversões que o desenvolvedor não deseja que sejam verificados explicitamente. O cast ocorre em nível binário
+
+### Exemplos
+- Fortemente tipadas: Java, C#, ML e Ada
+- Fracamente tiapda: C/C++ (por conta das Unions), Javascript e PHP
+
+### Regras de Coerção
+- Podem ocorrer problemas de precisão
+- A detecção de erros torna-se mais difícil
