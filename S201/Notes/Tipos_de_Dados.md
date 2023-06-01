@@ -190,3 +190,26 @@ Conversões que o desenvolvedor não deseja que sejam verificados explicitamente
 ### Regras de Coerção
 - Podem ocorrer problemas de precisão
 - A detecção de erros torna-se mais difícil
+
+## 10. Equivalencia de Tipos
+### Questões
+- Definir regras de conversão para tipos escalares é casual
+- Para tipos definidos pelo usuário, deve ser utilizado o termo **equivalente**, pois não haverá nenhum tipo de conversão
+
+### Tipos de Equivalência
+- Por nome -> A verificação é mais simples, porém mais restritivo
+- por estrutura -> Vai verificar campo por campo e associá-los
+
+### Por nome
+- Todos os tipos devem possuir nome
+
+### Por estrutura
+- Equivalência por estrutura pode não ser suficiente. Caso das structs terem campos com mesmo tipo de dados mas com nomes diferentes, ex.: em duas structs pessoa. Uma com campo "peso" e outra "massa", ambos float
+- Linguagens mais rigorosas utilizam equivalência por nome dentro da equivalência por estrutura
+- Diferenciação
+    1. Subtipo -> Uma versão igual ou reduzida ao tipo original. São equivalentes e não herdam as propriedades do tipo original.
+
+            subtype Small_type is Integer range 0..99;
+
+    2. Derivado -> Utilizam **new**. Não são equivalentes e herdam as propriedades do tipo original.
+        > Exceção aos literais
