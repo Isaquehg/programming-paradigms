@@ -29,5 +29,3 @@
 - Atributos e Métodos
 - Relação entre classes com **hierarquias** customizadas
 - A execução é uma troca de mensagens entre objetos
-
-## Paradigma Funcional
