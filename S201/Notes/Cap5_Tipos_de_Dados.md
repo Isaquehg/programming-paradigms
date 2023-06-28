@@ -71,7 +71,7 @@
     - Valores de enumeração convertidos p inteiro (Java não, C sim)
     - Há outros tipos que podem ser convertidos para enum? (C apenas inteiros, como char)
 - Controle sobre a faixa de valores
-- Vantagem de melhora de Legibilidade e Confiabilidade(em Java)
+- Vantagem de melhorar Legibilidade e Confiabilidade(em Java)
 
 ## 4. Matrizes Associativas (Dict, HasMap)
 ### Estrutura e Operações
@@ -147,7 +147,15 @@
 
 ### Problemas
 - Ponteiros soltos
-- Variáveis dinâmicas de monte perdidas (quando o ponteiro que continha o endereço passa a apontar para outro endereço e não desloca o antigo endereço) -> memory leackage
+
+        int * arrayPtr1;
+        int * arrayPtr2 = new int[100];
+        arrayPtr1 = arrayPtr2;
+        delete [] arrayPtr2;
+        // Agora, arrayPtrl é solto, porque o armazenamento no monte
+        // para o qual ele estava apontando foi liberado.
+
+- Variáveis dinâmicas de monte perdidas (Lixo e vazamento de memória) -> quando o ponteiro que continha o endereço passa a apontar para outro endereço e não desloca a antiga variável (memory leackage)
 
 ### Aplicação
 - C/C++: 
@@ -162,12 +170,14 @@
 ### Definição
 Garantir que os operandos de um operador são tipos compatíveis
 ### Conversões
-- Coerção: Conversão automática -> **Na coerção, sempre a conversão é feita para um tipo superior (maior, tipo de int para float ou float para double) quando vai decidir qual tipo os dados serão convertidos na operação!**
+- Coerção: Conversão automática -> **Na coerção, sempre a conversão é feita para um tipo superior (maior, tipo de int para float ou float para double) na decisão dos tipos de dados que serão convertidos na operação!**
 
         float x = 1 + 5.0f
+
 - Casting
 
         float x = (float)1 + 5.0f
+
 ### Momento de verificação
 - Quando a verificação de tipos é feita em tempo de compilação, ocorre menos gasto computacional e ocorrem menos erros
 - A vantagem de verificar em execução é poder executar sem grande tempo de planejamento
